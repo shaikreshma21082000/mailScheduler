@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Register</h1>
+    <form [formGroup]="registerForm">
+        <mat-form-field class="example-full-width" appearance="outline" appearance="fill" >
+          <mat-label style="color:white" >Email Address</mat-label>
+          <input style="color:white" type="email" matInput class="form-control" formControlName="emailFormControl" placeholder="Ex. anything@example.com">
+          <mat-error *ngIf="registerForm.controls['emailFormControl'].hasError('email') && !registerForm.controls['emailFormControl'].hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls['emailFormControl'].hasError('required')" style="color:rgb(183, 194, 24);" >
+            Email is required
+          </mat-error>
+        </mat-form-field><br>
+    
+        <mat-form-field appearance="fill">
+            <mat-label style="color:white;">Password</mat-label>
+            <input matInput [type]="hide1 ? 'password' : 'text'" style="color:white" class="form-control" formControlName="passwordFormControl">
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+              <mat-icon style="color:white;" >{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label style="color:white;">Confirm Password</mat-label>
+            <input matInput [type]="hide2 ? 'password' : 'text'" style="color:white" class="form-control" formControlName="ConfirmpasswordFormControl">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+              <mat-icon style="color:white;" >{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field><br>
+
+        
+          <button class="btn" mat-stroked-button [disabled]="registerForm.invalid"  routerLink="/accounts/login" (click)="register()">Register</button>
+          <button  class="btn" mat-stroked-button  routerLink="/accounts/login">Login</button>
+  </form>
+</div>

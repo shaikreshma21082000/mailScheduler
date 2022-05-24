@@ -1,0 +1,30 @@
+.form{
+    /* background-color: black; */
+    width:100%;
+    height:auto;
+}
+
+.example-full-width{
+    margin:5px;
+    margin-right: 20px;
+}
+label{
+    /* color: white; */
+    font-size:large;
+    font-weight: 600;
+   
+}
+button{
+    /* color: white; */
+    color:black;
+    height:50px;
+    width:70px;
+    border:1px solid black;
+}
+button:hover{
+    background-color: rgb(65, 61, 61);
+    
+}
+.btn{
+    margin-top: 20px;
+}

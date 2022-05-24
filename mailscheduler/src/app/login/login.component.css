@@ -1,0 +1,30 @@
+mat-label:hover{
+color:rgb(194,24,91);
+}
+.mat-input:hover{
+    color:rgb(194,24,91);;
+}
+h1{
+    font-size:x-large;
+   color: white;
+}
+.container{
+    margin-left:300px;
+    margin-top:50px;
+}
+.btn{
+    color:rgb(194,24,91);
+    border: 2px solid rgb(194,24,91);
+    margin: 10px;
+}
+button:hover{
+    background-color:rgb(194,24,91);
+    color:white;
+}
+input{
+    width:300px;
+}
+.bth:disabled{
+    border: 2px solid rgb(194,24,91);
+    margin: 10px;
+}

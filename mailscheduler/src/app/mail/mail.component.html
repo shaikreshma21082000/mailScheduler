@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="header">
+         Mail Scheduler
+        <a style="margin-right:200px;" class="headlogo" (click)="populateDialogForm()"  *ngIf=showaccount><mat-icon>settings</mat-icon>{{showaccount}}</a>
+        <a class="headlogo" routerLink="/accounts/login"><mat-icon style="margin-right:5px;">logout</mat-icon><span>Logout</span></a>
+    </div>
+    <div id="first">
+        <a  style="text-decoration:none;"><button id="addacc" mat-button (click)="openDialog()">+ Add Account</button></a>
+        <button id="accounts" mat-button><mat-icon style="color: white;">person</mat-icon>Accounts</button>
+        <div id="acc-container">
+        <a routerLink=""><div class="acc" *ngFor="let acc of accounts" (click)="showAcc(acc)">
+            <span style="font-size: medium;">{{acc.accountName}}</span><br>
+            <span style="font-size:small;">{{acc.email}}</span><br>
+            </div> </a>
+        </div>  
+    </div>
+    
+<div id="second"  style="background-color:  rgb(59, 58, 58);;">
+    <div><div class="heading" style="border-bottom:2px solid rgb(194,24,91)">Scheduling Emails</div><div class="heading" style="border-bottom:2px solid rgb(59, 57, 57);width:37%;">Sent Emails</div></div> 
+    <div  class="mail" *ngFor="let mail of mails" (click)="populateMail(mail)">
+        <div style="font-size:medium;float:left;width:200px;">
+           {{mail.to}}<br> 
+           {{mail.subject}}<br> 
+           {{mail.body}}<br>
+        </div>
+     <div style="font-size:medium;float:left;width:100px;">
+            <mat-icon>event</mat-icon><br>
+           {{mail.scheduledDate}}<br>
+           {{mail.scheduledTime}}<br></div>
+    </div>
+</div>
+<div id="third">
+    <div style="padding:20px">
+    <div><span style="color:white;font-size: larger;">Schedule Email</span><span style="float:right;color:white">New Email</span></div>
+    <div [formGroup]="mailForm">
+    
+    <mat-form-field style="width:100%;height:10px;" class="example-full-width" appearance="outline" appearance="fill" >
+        <mat-label style="color:white" >To</mat-label>
+        <input style="color:white;" type="email" matInput class="form-control" formControlName="to">
+    </mat-form-field>
+    
+    <mat-form-field style="width:100%;height:10px;" class="example-full-width" appearance="outline" appearance="fill" >
+        <mat-label style="color:white" >cc</mat-label>
+        <input style="color:white;" type="email" matInput class="form-control" formControlName="cc">
+    </mat-form-field>
+    
+    <mat-form-field style="width:100%;height:10px;" class="example-full-width" appearance="outline" appearance="fill" >
+        <mat-label style="color:white" >Bcc</mat-label>
+        <input style="color:white;" type="email" matInput class="form-control" formControlName="bcc">
+    </mat-form-field>
+
+    <mat-form-field style="width:100%;height:10px;" class="example-full-width" appearance="outline" appearance="fill" >
+        <mat-label style="color:white" >Subject</mat-label>
+        <input style="color:white;" type="email" matInput class="form-control" formControlName="subject">
+    </mat-form-field>
+
+    <mat-form-field style="width:100%;height:10px;" class="example-full-width" appearance="outline" appearance="fill" >
+        <mat-label style="color:white" >Body</mat-label>
+        <textarea style="color:white;" type="textarea" matInput class="textarea" formControlName="body"></textarea>
+    </mat-form-field>
+    <div style="margin-top:15px;">
+    <mat-form-field style="margin-right:15px;" appearance="fill">
+            <mat-label style="color:white">Choose a date</mat-label>
+            <input style="color:white" matInput type="date" formControlName="scheduledDate">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label style="color:white">Schedule Time</mat-label>
+            <input style="color:white" matInput type="time" formControlName="scheduledTime">
+        </mat-form-field>
+    </div>
+        <div class="btn">
+        <button style="margin-right: 25px;" mat-button appearance="fill" [disabled]="mailForm.invalid" (click)="sendMailData()">Schedule Email</button>
+        <button mat-button (click)="clearmail()">Discard Changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+</div>

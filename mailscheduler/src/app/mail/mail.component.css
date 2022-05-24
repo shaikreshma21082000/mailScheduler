@@ -1,0 +1,99 @@
+.container{
+    background-color:  rgb(59, 58, 58);
+    width:100%;
+    height:100%;
+}
+.header{
+    width:98%;
+    height:50px;
+    background-color:rgb(194,24,91);
+    color:white;
+    font-size: x-large;
+    padding:20px;
+    padding-bottom: 0px;
+    float: left;
+}
+.headlogo{
+   float: right;
+   margin: 0px 20px;
+   font-size:medium;
+}
+#first{
+width:20%;
+float:left;
+background-color:  rgb(46, 43, 43);
+height: 90%;
+}
+#addacc,#accounts{
+    color:white;
+    font-size: larger;
+    margin-top:10px ;
+    padding: 10px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgb(59, 58, 58);
+    width:100%;
+    border-radius: 0px;
+}
+button:hover{
+    background-color: rgb(51, 49, 49);
+}
+#accounts{
+    width:40%;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.acc{
+   color:white;
+   padding: 20px 20px;  
+}
+.acc:hover{
+background-color: rgb(53, 50, 50);
+}
+#second{
+
+    width:40%;
+    float: left;
+    height:55px;
+    margin-top:5px;   
+}
+#second>div>div{
+ color:white;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ padding-left: 40px;
+ padding-right:80px;
+ font-size:large;
+ float: left;
+}
+/* .mail{
+    background-color: rgb(54, 50, 50);
+} */
+.mail{
+    color:white;
+    padding: 20px 0px;  
+ }
+ .heading:hover,.mail:hover{
+ background-color: rgb(53, 50, 50);
+ } 
+ #third{
+    background-color:rgb(70, 66, 66);
+    width:40%;
+    height:80%;
+    float: right;
+    margin-top: 20px;
+    border-radius:5px;   
+}
+.example-full-width{
+    margin:15px 0px;
+}
+.btn>button{
+    color:white;
+    background-color: rgb(37, 35, 35);
+
+}
+
+.textarea{
+    height:100px;
+}
